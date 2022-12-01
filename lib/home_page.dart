@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 5,
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
@@ -159,6 +159,73 @@ class _HomePageState extends State<HomePage> {
                       )
                     ],
                   ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 180,
+                width: MediaQuery.of(context).size.width,
+                child: Stack(
+                  children: [
+                    // Below background image
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      margin: const EdgeInsets.only(top: 30),
+                      height: 120,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                              image: AssetImage("assets/card.jpg"),
+                              fit: BoxFit.fill),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 10,
+                                offset: Offset(-1, -5),
+                                color: color.AppColor.gradientSecond
+                                    .withOpacity(0.3))
+                          ]),
+                    ),
+                    // Top background girl image
+                    Container(
+                      height: 180,
+                      width: MediaQuery.of(context).size.width,
+                      margin: const EdgeInsets.only(right: 200, bottom: 30),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                            image: AssetImage("assets/figure.png"),
+                            fit: BoxFit.fill),
+                      ),
+                    ),
+                    Container(
+                      width: double.maxFinite,
+                      height: 100,
+                      margin: const EdgeInsets.only(left: 150, top: 50),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "You are doing great",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: color.AppColor.homePageDetail),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          RichText(
+                              text: TextSpan(
+                                  text: "Keep it up stick to your plan!",
+                                  style: TextStyle(
+                                      color: color.AppColor.homePagePlanColor,
+                                      fontSize: 16)))
+                        ],
+                      ),
+                    )
+                  ],
                 ),
               )
             ],
